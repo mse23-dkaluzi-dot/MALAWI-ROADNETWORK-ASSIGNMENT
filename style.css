@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #222;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+header {
+  background: #00563f;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+header h1 {
+  font-size: 1.6rem;
+}
+
+main {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 15px;
+}
+
+section {
+  background: white;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+  color: #00563f;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-bottom: 8px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+}
+
+button {
+  width: 100%;
+  min-height: 48px;
+  background: #00563f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background: #007a59;
+}
+
+#resetButton {
+  background: #6c757d;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  background: #fdecea;
+  color: #b00020;
+  border: 1px solid #f5c6cb;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.result {
+  background: #e8f5ee;
+  border: 1px solid #b7dfc8;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+#distanceText {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+#routeText {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.source-dot {
+  background: #1a7f37;
+}
+
+.destination-dot {
+  background: #c62828;
+}
+
+.line {
+  width: 30px;
+  height: 5px;
+  background: #ff8f00;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.map-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #eaf3ee;
+}
+
+#roadMap {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.road {
+  stroke: #8d99ae;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.road-label {
+  fill: #333;
+  font-size: 13px;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: white;
+  stroke-width: 4px;
+}
+
+.town {
+  fill: #00563f;
+  stroke: white;
+  stroke-width: 3;
+}
+
+.town-label {
+  fill: #111;
+  font-size: 13px;
+  font-weight: bold;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: white;
+  stroke-width: 4px;
+}
+
+.route-road {
+  stroke: #ff8f00;
+  stroke-width: 7;
+}
+
+.route-town {
+  fill: #ff8f00;
+  stroke: white;
+  stroke-width: 3;
+}
+
+.source-town {
+  fill: #1a7f37;
+}
+
+.destination-town {
+  fill: #c62828;
+}
+
+footer {
+  background: #00563f;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  .road-label,
+  .town-label {
+    font-size: 11px;
+  }
+}

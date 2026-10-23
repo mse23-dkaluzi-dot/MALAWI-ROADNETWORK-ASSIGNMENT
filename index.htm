@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malawi Road Network — Dijkstra’s Algorithm</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Malawi Road Network</h1>
+    <p>Shortest Route Finder Using Dijkstra’s Algorithm</p>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>About This Project</h2>
+      <p>
+        This web application models the main road network of Malawi as an
+        undirected weighted graph. It contains 22 major towns and district
+        centres connected by 27 roads. Each road has a weight representing its
+        approximate distance in kilometres.
+      </p>
+      <p>
+        Dijkstra’s algorithm is used to find the shortest driving distance and
+        route between two selected towns.
+      </p>
+    </section>
+
+    <section class="controls">
+      <h2>Find the Shortest Route</h2>
+
+      <form id="routeForm">
+        <div class="form-group">
+          <label for="source">Source Town</label>
+          <select id="source" required>
+            <option value="">-- Select source town --</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="destination">Destination Town</label>
+          <select id="destination" required>
+            <option value="">-- Select destination town --</option>
+          </select>
+        </div>
+
+        <button type="submit">Find Shortest Path</button>
+        <button type="button" id="resetButton">Reset</button>
+      </form>
+    </section>
+
+    <section id="resultSection" class="hidden">
+      <h2>Result</h2>
+
+      <div id="errorBox" class="error hidden"></div>
+
+      <div id="resultBox" class="result hidden">
+        <p id="distanceText"></p>
+        <h3>Shortest Route</h3>
+        <p id="routeText"></p>
+      </div>
+    </section>
+
+    <section class="graph-section">
+      <h2>Malawi Road Network Graph</h2>
+      <p>
+        The graph below shows the 22 towns and 27 roads used in this project.
+        The number on each road represents the approximate distance in kilometres.
+      </p>
+      <img
+        src="images/graph.png"
+        alt="Weighted undirected graph of Malawi’s road network"
+      />
+    </section>
+
+    <section class="algorithm-section">
+      <h2>How Dijkstra’s Algorithm Works</h2>
+      <ol>
+        <li>Set the distance from the source town to itself as 0.</li>
+        <li>Set the distance from the source town to every other town as infinity.</li>
+        <li>Select the unvisited town with the smallest known distance.</li>
+        <li>Mark that town as visited.</li>
+        <li>
+          Update the distance to each neighbouring town if a shorter route is
+          found through the current town.
+        </li>
+        <li>Repeat until all towns have been visited.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Malawi Road Network — Dijkstra’s Algorithm | Group Assignment
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

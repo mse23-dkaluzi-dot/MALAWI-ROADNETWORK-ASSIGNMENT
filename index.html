@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malawi Road Network — Dijkstra’s Algorithm</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Malawi Road Network</h1>
+    <p>Interactive Shortest Route Finder Using Dijkstra’s Algorithm</p>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>About This Project</h2>
+      <p>
+        This web application models the main road network of Malawi as an
+        undirected weighted graph. It contains 22 major towns and district
+        centres connected by 27 roads. Each road has a weight representing its
+        approximate distance in kilometres.
+      </p>
+      <p>
+        Select a source town and destination town, then click
+        <strong>Find Shortest Path</strong>. The shortest route will be
+        highlighted on the graph below.
+      </p>
+    </section>
+
+    <section class="controls">
+      <h2>Find the Shortest Route</h2>
+
+      <form id="routeForm">
+        <div class="form-group">
+          <label for="source">Select Source Town</label>
+          <select id="source" required>
+            <option value="">-- Choose source town --</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="destination">Select Destination Town</label>
+          <select id="destination" required>
+            <option value="">-- Choose destination town --</option>
+          </select>
+        </div>
+
+        <button type="submit">Find Shortest Path</button>
+        <button type="button" id="resetButton">Reset</button>
+      </form>
+    </section>
+
+    <section class="map-section">
+      <h2>Malawi Road Network Map</h2>
+
+      <p class="legend">
+        <span class="legend-item">
+          <span class="dot source-dot"></span> Source
+        </span>
+
+        <span class="legend-item">
+          <span class="dot destination-dot"></span> Destination
+        </span>
+
+        <span class="legend-item">
+          <span class="line route-line"></span> Shortest route
+        </span>
+      </p>
+
+      <div class="map-container">
+        <svg
+          id="roadMap"
+          viewBox="0 0 600 1080"
+          role="img"
+          aria-label="Interactive map of Malawi road network"
+        >
+        </svg>
+      </div>
+
+      <div id="resultSection" class="hidden">
+        <div id="errorBox" class="error hidden"></div>
+
+        <div id="resultBox" class="result hidden">
+          <h3>Shortest Route Result</h3>
+          <p id="distanceText"></p>
+          <p id="routeText"></p>
+          <p id="townCountText"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="algorithm-section">
+      <h2>How Dijkstra’s Algorithm Works</h2>
+      <ol>
+        <li>Set the distance from the source town to itself as 0.</li>
+        <li>Set the distance from the source town to every other town as infinity.</li>
+        <li>Select the unvisited town with the smallest known distance.</li>
+        <li>Mark that town as visited.</li>
+        <li>Update neighbouring towns if a shorter route is found.</li>
+        <li>Repeat until the destination is reached or all towns are visited.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>Malawi Road Network — Dijkstra’s Algorithm | Group Assignment</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
